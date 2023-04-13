@@ -1,0 +1,45 @@
+<div class="container">
+    <button mat-button (click)="go_to_helper()"><mat-icon>arrow_back_ios</mat-icon> Back</button>
+    <div class="image-container">
+        <img class="image" src="../../../assets/intro_2.png" alt="">
+    </div>
+    <div class="heading">
+        <h3><b>I need to take action after receiving an eviction notice</b></h3>
+    </div>
+    <p class="text-justify">If you received an <a href="#">eviction notice</a>, you'll need to file an answer within
+        <b>7 days</b>, excluding weekends and court holidays. </p>
+
+    <mat-card class="example-card">
+        <mat-card-header>
+            <p style="text-align: center;"><b style="text-align: center;">What would happen if I don't take action?</b></p>
+        </mat-card-header>
+        <mat-card-content>
+            <p class="text-justify">
+                You will risk <b>losing your case automatically</b> if you file a late answer, do not file an answer, or file an improper legal defense.
+            </p>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="example-card">
+        <mat-card-header>
+            <p style="text-align: center;"><b>Watch out for Improper Service</b></p>
+        </mat-card-header>
+        <mat-card-content>
+            <p class="text-justify">
+                A Sheriff, Marshal, or Private Process Server, can legally serve an eviction notice, either in person or via tack and mail. If your <b>landlord tries to serve</b> you the warrant themselves, you did not receive proper service. <b>Document the date, method, and who delivered your eviction notice</b>.
+            </p>
+            <br>
+            <p class="text-justify">
+                If you believe the eviction notice wasn't properly served to you, please <a href="#">consult with a lawyer</a>.
+            </p>
+        </mat-card-content>
+    </mat-card>
+    <div class="full-button">
+        <button mat-raised-button color="primary" style="float: left; width: 100%;" (click)="go_to_form()"><b class="button-text">Fill Answer Form</b></button>
+    </div>
+    <br><br>
+    <div class="button-div">
+        <button mat-button color="primary" style="float: left;"><b class="button-text">Prepare for Court<mat-icon>arrow_forward</mat-icon></b></button>
+        <button mat-button style="float: right;" (click)="go_to_home()"><mat-icon>home</mat-icon>Home</button>
+    </div>
+</div>

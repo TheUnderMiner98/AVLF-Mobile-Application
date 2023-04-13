@@ -1,0 +1,42 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$avlf-palette: (
+    50: #f9fae6,
+    100: #f1f1c2,
+    200: #e8e89a,
+    300: #e0df74,
+    400: #dbd959,
+    500: #d6d341,
+    600: #d5c23a,
+    700: #d2ad30,
+    800: #ce9626,
+    900: #c77214,
+    A100 : #f9fae6,
+    A200 : #f1f1c2,
+    A400 : #e8e89a,
+    A700 : #dbd959,
+    contrast: (50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$avlf-theme-primary: mat.define-palette($avlf-palette, 600);
+$avlf-theme-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$avlf-theme: mat.define-light-theme($avlf-theme-primary, $avlf-theme-accent);
+
+@include mat.all-component-themes($avlf-theme);

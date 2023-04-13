@@ -1,0 +1,93 @@
+<div class="container">
+    <button mat-button (click)="go_to_helper()"><mat-icon>arrow_back_ios</mat-icon> Back</button>
+    <div class="image-container">
+        <img class="image" src="../../../assets/intro_3.png" alt="">
+    </div>
+    <div class="heading">
+        <h3><b>I need to prepare for court hearing...</b></h3>
+    </div>
+    <p class="text-justify">Anxious about representing yourself at court? Let's get ready now!</p>
+    <br>
+    <p class="text-justify gray"><b>Show up on time</b></p>
+    <hr>
+    <mat-accordion>
+        <mat-expansion-panel (opened)="open[0] = true" (closed)="open[0] = false">
+            <mat-expansion-panel-header [collapsedHeight]="'8vh'" [expandedHeight]="'11vh'">
+                <mat-panel-title class="panel-title">
+                    <td><mat-icon>help</mat-icon></td>
+                    <td><p class="text-justify panel-text">When is my court date?</p></td>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="text-justify">Some content here!</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="open[1] = true" (closed)="open[1] = false">
+            <mat-expansion-panel-header [collapsedHeight]="'8vh'" [expandedHeight]="'11vh'">
+                <mat-panel-title class="panel-title">
+                    <td><mat-icon>help</mat-icon></td>
+                    <td><p class="text-justify panel-text">What if I can’t make it to court on that day?</p></td>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="text-justify">Some content here!</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <br>
+    <p class="text-justify gray"><b>Prepare for court</b></p>
+    <hr>
+    <mat-accordion>
+        <mat-expansion-panel (opened)="open[2] = true" (closed)="open[2] = false">
+            <mat-expansion-panel-header [collapsedHeight]="'8vh'" [expandedHeight]="'11vh'">
+                <mat-panel-title class="panel-title">
+                    <td><mat-icon>help</mat-icon></td>
+                    <td><p class="text-justify panel-text">How to prepare evidence?</p></td>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="text-justify">Some content here!</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="open[3] = true" (closed)="open[3] = false">
+            <mat-expansion-panel-header [collapsedHeight]="'8vh'" [expandedHeight]="'11vh'">
+                <mat-panel-title class="panel-title">
+                    <td><mat-icon>help</mat-icon></td>
+                    <td><p class="text-justify panel-text">Remember to set aside time for your court</p></td>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="text-justify">Some content here!</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <br>
+    <p class="text-justify gray"><b>Court day</b></p>
+    <hr>
+    <mat-accordion>
+        <mat-expansion-panel (opened)="open[4] = true" (closed)="open[4] = false">
+            <mat-expansion-panel-header [collapsedHeight]="'8vh'" [expandedHeight]="'11vh'">
+                <mat-panel-title class="panel-title">
+                    <td><mat-icon>help</mat-icon></td>
+                    <td><p class="text-justify panel-text">What is going to happen in court?</p></td>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="text-justify">Some content here!</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="open[5] = true" (closed)="open[5] = false">
+            <mat-expansion-panel-header [collapsedHeight]="'8vh'" [expandedHeight]="'11vh'">
+                <mat-panel-title class="panel-title">
+                    <td><mat-icon>help</mat-icon></td>
+                    <td><p class="text-justify panel-text">What does it mean to sign an agreement?</p></td>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="text-justify">Some content here!</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="open[5] = true" (closed)="open[5] = false">
+            <mat-expansion-panel-header [collapsedHeight]="'8vh'" [expandedHeight]="'11vh'">
+                <mat-panel-title class="panel-title">
+                    <td><mat-icon>help</mat-icon></td>
+                    <td><p class="text-justify panel-text">When will I see a judge?</p></td>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="text-justify">Some content here!</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <br>
+    <div class="button-div">
+        <button mat-button color="primary" style="float: left;"><b class="button-text">Challenge My Eviction<mat-icon>arrow_forward</mat-icon></b></button>
+        <button mat-button style="float: right;" (click)="go_to_home()"><mat-icon>home</mat-icon>Home</button>    
+    </div>
+</div>

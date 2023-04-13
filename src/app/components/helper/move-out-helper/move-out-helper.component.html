@@ -1,0 +1,70 @@
+<div class="container">
+    <button mat-button (click)="go_to_helper()"><mat-icon>arrow_back_ios</mat-icon> Back</button>
+    <div class="image-container">
+        <img class="image" src="../../../assets/intro_1.png" alt="">
+    </div>
+    <div class="heading">
+        <h3><b>My landlord is telling me to move out...</b></h3>
+    </div>
+    <p class="text-justify">It doesn't mean that you need to move out right away. </p>
+    <br>
+    <p class="text-justify gray"><b>Before landlord file in court</b></p>
+    <hr>
+    <mat-accordion>
+        <mat-expansion-panel (opened)="open[0] = true" (closed)="open[0] = false">
+            <mat-expansion-panel-header [collapsedHeight]="'8vh'" [expandedHeight]="'11vh'">
+                <mat-panel-title class="panel-title">
+                    <td><mat-icon>help</mat-icon></td>
+                    <td><p class="text-justify panel-text">What does it mean when my landlord tells me to move out?</p></td>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="text-justify">Some content here!</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="open[1] = true" (closed)="open[1] = false">
+            <mat-expansion-panel-header [collapsedHeight]="'8vh'" [expandedHeight]="'11vh'">
+                <mat-panel-title class="panel-title">
+                    <td><mat-icon>help</mat-icon></td>
+                    <td><p class="text-justify panel-text">How to prevent court proceedings</p></td>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="text-justify">Some content here!</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <br>
+    <p class="text-justify gray"><b>After landlord file in court</b></p>
+    <hr>
+    <mat-accordion>
+        <mat-expansion-panel (opened)="open[2] = true" (closed)="open[2] = false">
+            <mat-expansion-panel-header [collapsedHeight]="'8vh'" [expandedHeight]="'11vh'">
+                <mat-panel-title class="panel-title">
+                    <td><mat-icon>help</mat-icon></td>
+                    <td><p class="text-justify panel-text">What does it mean when my landlord tells me to move out?</p></td>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="text-justify">Some content here!</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="open[3] = true" (closed)="open[3] = false">
+            <mat-expansion-panel-header [collapsedHeight]="'8vh'" [expandedHeight]="'11vh'">
+                <mat-panel-title class="panel-title">
+                    <td><mat-icon>help</mat-icon></td>
+                    <td><p class="text-justify panel-text">How to prevent court proceedings</p></td>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="text-justify">Some content here!</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="open[4] = true" (closed)="open[4] = false">
+            <mat-expansion-panel-header [collapsedHeight]="'8vh'" [expandedHeight]="'11vh'">
+                <mat-panel-title class="panel-title">
+                    <td><mat-icon>help</mat-icon></td>
+                    <td><p class="text-justify panel-text">How to prevent court proceedings</p></td>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="text-justify">Some content here!</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <br>
+    <div class="button-div">
+        <button mat-button color="primary" (click)="go_to_form()"><b class="button-text">File Answer Form<mat-icon>arrow_forward</mat-icon></b></button>
+        <button mat-button style="float: right;" (click)="go_to_home()"><mat-icon>home</mat-icon>Home</button>
+    </div>
+</div>

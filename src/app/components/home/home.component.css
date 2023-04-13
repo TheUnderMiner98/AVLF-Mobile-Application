@@ -1,0 +1,44 @@
+.container {
+    width: 80%;
+    padding-top: 15vh;
+    text-align: center;
+}
+
+.subtext {
+    font-size: 1.5vh;
+    padding-bottom: 5vh;
+}
+
+.button-text {
+    font-size: 1.75vh;
+}
+
+.row-full {
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+    border-radius: 0;
+    border-color: black;
+    background-color: #fffaec;
+
+    margin-top: 5vh;
+}
+
+.justify {
+    text-align: justify;
+    margin-bottom: 0;
+    font-size: 1.5vh;
+}
+
+a:link {
+    color: #d2ad30;
+}
+
+a:visited {
+    color: #d2ad30;
+}
+
+a:active {
+    color: #d2ad30;
+}

@@ -1,0 +1,88 @@
+<div class="container" *ngIf="counter == 0">
+    <p class="text-justify big"><b>General Information</b></p>
+    <form #form="ngForm" [formGroup]="generalInfoForm">
+        <div class="form-group">
+            <label class="label">Email <span class="required">*</span></label>
+            <input type="text" class="form-control" formControlName="email" placeholder="xyz@email.com"
+                [ngClass]="{ 'is-invalid': form.submitted && controls['email'].invalid }">
+            <div *ngIf="form.submitted && controls['email'].invalid" class="text-danger">
+                <small *ngIf="controls['email'].errors?.['required']">Email is invalid</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="label">Case # <span class="required">*</span></label>
+            <input type="text" class="form-control" formControlName="case_number" placeholder="10 digit case number"
+                [ngClass]="{ 'is-invalid': form.submitted && controls['case_number'].invalid }">
+            <div *ngIf="form.submitted && controls['case_number'].invalid" class="text-danger">
+                <small *ngIf="controls['case_number'].errors?.['required']">Case number is required.</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="label">Plaintiff's Name (landlord or property manager) <span class="required">*</span></label>
+            <input type="text" class="form-control" formControlName="plaintiff_name" placeholder="Landlord's full name"
+                [ngClass]="{ 'is-invalid': form.submitted && controls['plaintiff_name'].invalid }">
+            <div *ngIf="form.submitted && controls['plaintiff_name'].invalid" class="text-danger">
+                <small *ngIf="controls['plaintiff_name'].errors?.['required']">Landlord's name is required.</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="label">Defendent's Name (You) <span class="required">*</span></label>
+            <input type="text" class="form-control" formControlName="defendent_name" placeholder="Your full name"
+                [ngClass]="{ 'is-invalid': form.submitted && controls['defendent_name'].invalid }">
+            <div *ngIf="form.submitted && controls['defendent_name'].invalid" class="text-danger">
+                <small *ngIf="controls['defendent_name'].errors?.['required']">Please enter your full name.</small>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="button-div">
+            <button mat-raised-button style="float: left; width: 40%;" (click)="prev_step()"><b>Back</b></button>
+            <button mat-raised-button style="float: right; width: 56%" (click)="save_details_1()" color="primary"
+                [disabled]="!generalInfoForm.valid"><b>Next</b></button>
+        </div>
+    </form>
+</div>
+
+<div class="container" *ngIf="counter == 1">
+    <p class="text-justify big"><b>General Information</b></p>
+    <p class="text-justify big">Number of tenants in your household</p>
+    <br>
+    <mat-card class="example-card">
+        <div class="card-form">
+            <div class="card-form-input">
+                <span>
+                    <b>Adults</b>
+                    <span class="dark-span">
+                        <span class="minus" (click)="subtract_adult()"><b>-</b></span>
+                        {{ adult_count }}
+                        <span class="plus" (click)="add_adult()"><b>+</b></span>
+                    </span>
+                </span>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="card-form-input">
+                <b>Children</b>
+                <span class="dark-span-2">
+                    <span class="minus" (click)="subtract_child()"><b>-</b></span>
+                    {{ children_count }}
+                    <span class="plus" (click)="add_child()"><b>+</b></span>
+                </span>
+            </div>
+        </div>
+    </mat-card>
+    
+    <br>
+    <br>
+    <div class="button-div">
+        <button mat-raised-button style="float: left; width: 40%;" (click)="prev_step()"><b>Back</b></button>
+        <button 
+            mat-raised-button 
+            style="float: right; width: 56%" 
+            (click)="save_details_2()" 
+            color="primary"
+            [disabled]="adult_count == 0"
+        >
+            <b>Next</b>
+        </button>
+    </div>
+</div>

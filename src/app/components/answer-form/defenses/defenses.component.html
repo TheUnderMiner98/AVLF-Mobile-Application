@@ -1,0 +1,73 @@
+<div class="container" *ngIf="counter == 0">
+    <p class="text-justify big"><b>Select all defenses that apply</b></p>
+    <p class="text-justify big">Check the plaintiff's name and property address as shown below</p>
+    <br>
+    <mat-card class="example-card">
+        <mat-card-header>
+            <p style="text-align: center;"><b style="text-align: center;">Example</b>
+            </p>
+        </mat-card-header>
+        <img mat-card-image src="../../../../assets/plaintiff_address.png" alt="Photo of a Shiba Inu">
+    </mat-card>
+    <br>
+    <div class="checkbox-div">
+        <section>
+            <img src="../../../../assets/icon-1.png" alt="Photo of a Shiba Inu">
+            <div class="inner-div">
+                <label>Plaintiff is not my landlord</label>
+                <mat-checkbox 
+                    class="checkbox-margin" 
+                    labelPosition="after" 
+                    [(ngModel)]="plaintiff_checkbox_1"
+                    color="primary"
+                >
+                </mat-checkbox>
+                <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button>
+            </div>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <img src="../../../../assets/icon-1.png" alt="Photo of a Shiba Inu">
+            <div class="inner-div">
+                <label>Plaintiff is not my landlord</label>
+                <mat-checkbox 
+                    class="checkbox-margin" 
+                    labelPosition="after" 
+                    [(ngModel)]="plaintiff_checkbox_2"
+                    color="primary"
+                >
+                </mat-checkbox>
+                <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button>
+            </div>
+        </section>
+    </div>
+    <br>
+    <div class="button-div">
+        <button mat-raised-button style="float: left; width: 40%;" (click)="prev_step()"><b>Back</b></button>
+        <button mat-raised-button style="float: right; width: 56%" (click)="save_checkbox()" color="primary"><b>Next</b></button>
+    </div>
+</div>
+
+<div class="container" *ngIf="counter == 1">
+    <p class="text-justify big"><b>Reason for eviction</b></p>
+    <p class="text-justify big">Did your landlord make the following claim?</p>
+    <br>
+    <mat-card class="example-card">
+        <img mat-card-image src="../../../../assets/defenses.png" alt="Photo of a Shiba Inu">
+        <p style="text-align: center;"><b>"You did not pay your rent"</b></p>
+    </mat-card>
+    <br>
+    <div class="button-div response-btn">
+        <button mat-button class="height-btn" style="float: left; width: 47%;">
+            <mat-icon [ngStyle]="{'color':'red'}">remove_circle_outline</mat-icon>No
+        </button>
+        <button mat-button class="height-btn" style="float: right; width: 47%;">
+            <mat-icon [ngStyle]="{'color':'lightgreen'}">check_circle_outline</mat-icon>Yes
+        </button>
+    </div>
+    <div class="full-button">
+        <button class="back-btn" mat-button style="float: left; width: 100%;" (click)="prev_step()"><b>Back</b></button>
+    </div>
+</div>

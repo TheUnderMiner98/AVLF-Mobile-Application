@@ -1,0 +1,89 @@
+<div class="container" *ngIf="counter == 0">
+    <p class="text-justify big"><b>Address of the property</b></p>
+    <form #form="ngForm" [formGroup]="zipcodeForm">
+        <div class="form-group">
+            <label class="label">Zip Code <span class="required">*</span></label>
+            <input type="number" class="form-control" formControlName="zipcode" placeholder="Zip code"
+                (change)="check_zip_code()" [ngClass]="{ 'is-invalid': form.submitted && controls['zipcode'].invalid }">
+            <div *ngIf="form.submitted && controls['zipcode'].invalid" class="text-danger">
+                <small *ngIf="controls['zipcode'].errors?.['required']">Zip Code is required.</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="label">County <span class="required">*</span></label>
+            <input type="text" class="form-control" formControlName="county" placeholder="Fulton"
+                [ngClass]="{ 'is-invalid': form.submitted && controls['county'].invalid }">
+            <div *ngIf="form.submitted && controls['county'].invalid" class="text-danger">
+                <small *ngIf="controls['county'].errors?.['required']">County is required.</small>
+            </div>
+        </div>
+        <br>
+        <div *ngIf="zipcode_length == 5 && !is_georgia_state" class="text-danger">
+            <p class="text-justify full-width">We're sorry, but this service is currently only available for residents
+                of Georgia.</p>
+        </div>
+        <br>
+        <div class="form-group card" *ngIf="is_fulton_county">
+            <mat-card class="mat-card">
+                <mat-card-header>
+                    <mat-card-title><img src="../../../../assets/fulton.png" height="30vh"
+                            width="60vh"></mat-card-title>
+                    <mat-card-subtitle>
+                        <p class="text-justify">
+                            As a Fulton County resident, you could also file the answer online using the Georgia court
+                            electronic filing system, eFileGA, <b>for a processing fee of $14.</b>
+                        </p>
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-actions>
+                    <button mat-raised-button class="full-width" (click)="open_dialog()"><b>File with
+                            eFileGA</b></button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+        <br>
+        <div class="form-group button-div">
+            <button class="mat-button full-width" mat-raised-button color="primary" [disabled]="!zipcodeForm.valid"
+                (click)="next_step()"><b>File in Person</b></button>
+        </div>
+    </form>
+</div>
+
+<div class="container" *ngIf="counter == 1">
+    <p class="text-justify big"><b>Service Date</b></p>
+    <form #form="ngForm" [formGroup]="serviceDateForm">
+        <div class="form-group">
+            <label class="label">Date notice was served <span class="required">*</span></label>
+            <input type="date" class="form-control" formControlName="date" placeholder="MM/DD/YYYY">
+        </div>
+    </form>
+    <br>
+    <mat-card class="example-card">
+        <mat-card-header>
+            <p style="text-align: center;"><b style="text-align: center;">Example</b>
+            </p>
+        </mat-card-header>
+        <img mat-card-image src="../../../../assets/service date.png" alt="Photo of a Shiba Inu">
+    </mat-card>
+    <br>
+    <div class="button-div">
+        <button mat-raised-button style="float: left; width: 40%;" (click)="prev_step()"><b>Back</b></button>
+        <button mat-raised-button style="float: right; width: 56%" (click)="calculate_date()" color="primary"
+            [disabled]="!serviceDateForm.valid"><b>Next</b></button>
+    </div>
+</div>
+
+<div class="container" *ngIf="counter == 2">
+    <p class="text-justify big"><b>Important to know</b></p>
+    <br>
+    <p class="text-justify">
+        The following process will help you create your Answer. Your Answer is a legal document that will help the court
+        get your side of the story, which may show that your landlord does not have a case to evict you. After
+        completing your Answer, you must <b>print, sign, and file with the court by 5:00 pm on {{ filing_date }}.</b>
+    </p>
+    <br>
+    <div class="button-div">
+        <button mat-raised-button style="float: left; width: 40%;" (click)="prev_step()"><b>Back</b></button>
+        <button mat-raised-button style="float: right; width: 56%" (click)="next_component()" color="primary"><b>Next</b></button>
+    </div>
+</div>
