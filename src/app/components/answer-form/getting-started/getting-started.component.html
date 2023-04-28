@@ -1,3 +1,18 @@
+<div class="container">
+    <br>
+    <br>
+    <p class="text-justify big pad"><b>File and Answer</b></p>
+    <div class="div-tr"></div>
+    <td width="90%">
+        <p class="text-justify"><span class="head-text">1 - Getting Started</span><mat-icon>keyboard_arrow_down</mat-icon></p>
+    </td>
+    <td width="5%"></td>
+    <td>
+        <button mat-button color="primary" (click)="open_exit_dialog()"><b>Exit</b></button>
+    </td>
+    <br>
+    <mat-divider></mat-divider>
+</div>
 <div class="container" *ngIf="counter == 0">
     <p class="text-justify big"><b>Address of the property</b></p>
     <form #form="ngForm" [formGroup]="zipcodeForm">
@@ -44,7 +59,7 @@
         <br>
         <div class="form-group button-div">
             <button class="mat-button full-width" mat-raised-button color="primary" [disabled]="!zipcodeForm.valid"
-                (click)="next_step()"><b>File in Person</b></button>
+                (click)="store_zipcode()"><b>File in Person</b></button>
         </div>
     </form>
 </div>

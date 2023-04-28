@@ -1,1 +1,111 @@
-<p>next-step works!</p>
+<div class="container">
+    <br>
+    <br>
+    <p class="text-justify big pad"><b>File and Answer</b></p>
+    <div class="div-tr"></div>
+    <td width="90%">
+        <p class="text-justify"><span class="head-text">5 - Next Steps</span><mat-icon>keyboard_arrow_down</mat-icon></p>
+    </td>
+    <td width="5%"></td>
+    <td>
+        <button mat-button color="primary" (click)="open_exit_dialog()"><b>Exit</b></button>
+    </td>
+    <br>
+    <mat-divider></mat-divider>
+</div>
+
+<div class="container">
+    <p class="text-justif"><b>Your answer form is <span style="color: red;">not filed yet</span></b></p>
+    <div class="div-tr"></div>
+    <p class="text-justify">Please follow the steps below</p>
+
+    <mat-card class="example-card">
+        <mat-card-content>
+            <div class="container">
+                <p class="text-justify"><b>1. Print two copies of your answer form and <span style="color: red;">take one to the magistrate court clerk's office</span></b></p>
+                <div class="div-tr"></div>
+                <p class="text-justify small-font"><span style="color: red;"><mat-icon>calendar_today</mat-icon>Before {{ date }}, 5:00 PM.</span></p>
+                <div class="div-tr"></div>
+                <p class="text-justify small-font"><mat-icon>location_on</mat-icon>136 Pryor St SW, Atlanta, GA 30303</p>
+                <br>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="container">
+                <p class="text-justify"><b>2. Watch out for your court date</b></p>
+                <div class="div-tr"></div>
+                <p class="text-justify small-font">Call Fulton County Magistrate Court every Monday and Wednesday after filing your answer form to ask for your court date (provide your case number).</p>
+                <div class="div-tr"></div>
+                <p class="text-justify small-font"><mat-icon>calendar_today</mat-icon>Every Monday and Wednesday</p>
+                <div class="div-tr"></div>
+                <p class="text-justify small-font"><mat-icon>phone</mat-icon>(404) 613-5360</p>
+                <br>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="container">
+                <p class="text-justify"><b>3. Gather any evidence you can</b></p>
+                <div class="div-tr"></div>
+                <p class="text-justify small-font">Here's a list of evidence for your legal defenses and counterclaims. Please make sure you have them ready before court date. </p>
+                <div class="div-tr"></div>
+                <p class="text-justify small-font"><mat-icon>calendar_today</mat-icon>Before court date</p>
+                <br>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<div class="container">
+    <div class="div-tr"></div>   
+    <br>
+    <br>     
+    <button class="back-btn" style="float: left; width: 100%;">
+        <tr>
+            <td><mat-icon>cloud_download</mat-icon></td>
+            <td class="left-td" align="left">
+                <span class="btn-text">Download Next Steps and Evidence List</span>
+            </td>
+            &nbsp;
+            <td class="right-td" align="right">
+                <mat-icon>arrow_forward_ios</mat-icon>
+            </td>
+        </tr> 
+    </button>
+    <div class="div-tr"></div>
+    <mat-divider></mat-divider>
+    <br>
+    <br>
+</div>
+
+<div class="container">
+    <p class="text-justify">For more legal assistance, contact:</p>
+    <div class="div-tr"></div>
+    <mat-card class="example-card">
+        <mat-card-header>
+            <img class="center-image" mat-card-image src="../../../../assets/next-1.png" alt="Photo of a Shiba Inu">
+        </mat-card-header>
+        <mat-card-content>
+            <p class="text-justify big center-text"><b>Atlanta Volunteer Lawyers Foundation</b></p>
+        </mat-card-content>
+    </mat-card>
+    <div class="div-tr"></div>
+    <mat-card class="example-card">
+        <mat-card-header>
+            <img class="center-image" mat-card-image src="../../../../assets/next-2.png" alt="Photo of a Shiba Inu">
+        </mat-card-header>
+        <mat-card-content>
+            <p class="text-justify big center-text"><b>Atlanta Legal Aid</b></p>
+        </mat-card-content>
+    </mat-card>
+    <div class="div-tr"></div>
+    <mat-card class="example-card">
+        <mat-card-header>
+            <img class="center-image" mat-card-image src="../../../../assets/next-3.png" alt="Photo of a Shiba Inu">
+        </mat-card-header>
+        <mat-card-content>
+            <p class="text-justify big center-text"><b>Georgia Legal Services Program</b></p>
+        </mat-card-content>
+    </mat-card>
+
+    <div class="button-div">
+        <button mat-button color="primary" (click)="go_to_court()"><b class="button-text">Prepare for Court <mat-icon>arrow_forward</mat-icon></b></button>
+    </div>
+</div>

@@ -1,3 +1,18 @@
+<div class="container">
+    <br>
+    <br>
+    <p class="text-justify big pad"><b>File and Answer</b></p>
+    <div class="div-tr"></div>
+    <td width="90%">
+        <p class="text-justify"><span class="head-text">2 - About your tenancy</span><mat-icon>keyboard_arrow_down</mat-icon></p>
+    </td>
+    <td width="5%"></td>
+    <td>
+        <button mat-button color="primary" (click)="open_exit_dialog()"><b>Exit</b></button>
+    </td>
+    <br>
+    <mat-divider></mat-divider>
+</div>
 <div class="container" *ngIf="counter == 0">
     <p class="text-justify big"><b>General Information</b></p>
     <form #form="ngForm" [formGroup]="generalInfoForm">
@@ -36,7 +51,7 @@
         <br>
         <br>
         <div class="button-div">
-            <button mat-raised-button style="float: left; width: 40%;" (click)="prev_step()"><b>Back</b></button>
+            <button mat-raised-button style="float: left; width: 40%;" (click)="prev_component()"><b>Back</b></button>
             <button mat-raised-button style="float: right; width: 56%" (click)="save_details_1()" color="primary"
                 [disabled]="!generalInfoForm.valid"><b>Next</b></button>
         </div>

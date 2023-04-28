@@ -1,21 +1,32 @@
 .container {
-    margin-top: 7vh;
-    margin-left: 1vh;
-    width: 95%;
+    margin-top: 2vh;
+    width: 100%;
 }
 
 .heading {
-    color: #d5c23a;
+    color: #ffca28;
 }
 
 .option {
     margin-top: 3vh;
 }
 
+@media screen and (min-width: 1000px) {
+    .text-justify {
+        text-align: left;
+        margin-bottom: 0;
+        font-size: 1vw;
+    }
+}
+
 .text-justify {
-    text-align: left;
+    text-align: justify;
     margin-bottom: 0;
     font-size: 1.5vh;
+}
+
+.big {
+    font-size: 1.6vh;
 }
 
 .image {
@@ -26,7 +37,7 @@
 }
 
 .button-text {
-    font-size: 1.5vh;
+    font-size: 2vh;
     margin-left: 0vh;
 }
 
@@ -70,4 +81,159 @@ hr {
 .panel-text {
     margin-left: 2vh;
     background: none;
+}
+
+a:link {
+    color: #ffca28;
+}
+
+a:visited {
+    color: #ffca28;
+}
+
+a:active {
+    color: #ffca28;
+}
+
+.full-button {
+    margin-top: 2vh;
+}
+
+.label {
+    font-size: 1.5vh;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+}
+
+.required {
+    color: red;
+}
+
+.full-width {
+    width: 100%;
+    font-size: 1.5vh;
+}
+
+.mat-card {
+    background-color: #fffbee;
+}
+
+.card-form {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.card-form-input {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+.dark-span {
+    margin-left: 13vh;
+    padding-top: 1vh;
+    background-color: lightgrey;
+    border-radius: 1vh;
+    display: inline-flex;
+    height: 5vh;
+    vertical-align: middle;
+}
+
+.dark-span-2 {
+    margin-left: 11vh;
+    padding-top: 1vh;
+    background-color: lightgrey;
+    border-radius: 1vh;
+    display: inline-flex;
+    height: 5vh;
+    vertical-align: middle;
+}
+
+.minus {
+    margin-left: 3vh;
+    text-align: center;
+    margin-right: 3vh;
+} 
+
+.plus {
+    font-size: 2vh;
+    margin-left: 3vh;
+    text-align: center;
+    margin-right: 3vh;
+}
+
+.checkbox-div {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.checkbox-margin {
+    margin-left: 10vh;
+}
+
+.checkbox-margin-2 {
+    margin-left: 1vh;
+}
+
+.response-btn {
+    margin-bottom: 20vh;
+}
+
+.height-btn {
+    height: 7vh;
+    border: 1px solid lightgray;
+    border-radius: 2vh;
+}
+
+.pad {
+    margin-bottom: 1vh;
+}
+
+.div-tr {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.yellow {
+    font-size: 1.5vh;
+    border: 1px solid #ffca28;
+    padding:1.3vh 2vh;
+}
+
+::placeholder {
+    padding-left: 1vh;
+}
+
+.currency-wrap{
+    position:relative;
+}
+
+.currency-code{
+    position:absolute;
+    left:1vh;
+    top:1vh;
+}
+
+.mid-input {
+    margin-top: 2vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    width: 10vh;
+    padding: 1vh;
+    border-radius: 1vh;
+    border: 1px solid gray;
+    background-color: #BDBDBD;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.mat-icon {
+    vertical-align: middle;
+}
+
+.td-img {
+    padding-top: 2vh;
 }

@@ -21,6 +21,6 @@ export class CourtHearingHelperComponent {
   }
 
   go_to_form() {
-    this.router.navigate(['getting-started']);
+    this.router.navigate(['file-answer']);
   }
 }

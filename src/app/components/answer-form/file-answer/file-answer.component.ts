@@ -11,7 +11,7 @@ import { DataService } from 'src/app/service/data.service';
   styleUrls: ['./file-answer.component.css']
 })
 export class FileAnswerComponent {
-  selected: string = "defenses";
+  selected: string = "getting-started";
   subscription: Subscription;
 
   constructor(

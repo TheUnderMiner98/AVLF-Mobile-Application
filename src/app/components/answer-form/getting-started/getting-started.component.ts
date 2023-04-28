@@ -4,6 +4,8 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 import { DataService } from '../../../../../src/app/service/data.service';
 import { Router } from '@angular/router';
 import { EFileComponent } from '../e-file/e-file.component';
+import { ExitComponent } from '../exit/exit.component';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-getting-started',
@@ -40,8 +42,20 @@ export class GettingStartedComponent {
     private fb: FormBuilder,
     private dataService: DataService,
     private router: Router,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private location: Location,
   ) {}
+
+  open_exit_dialog(): void {
+    const dialogRef = this.dialog.open(ExitComponent, {
+      height: '25%',
+      width: '70%'
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      console.log('The dialog was closed');
+    });
+  }
 
   get controls(): { [p: string]: AbstractControl } {
     return this.zipcodeForm.controls;
@@ -87,7 +101,17 @@ export class GettingStartedComponent {
     this.next_step();
   }
 
+  store_zipcode() {
+    const zipcode = this.controls['zipcode'].value;
+    const county = this.controls['county'].value;
+
+    this.dataService.store_zipcode(zipcode, county);
+    
+    this.next_step();
+  }
+
   next_component() {
-    this.dataService.send_message('tenancy');
+    this.router.navigate(['tenancy']);
+    // this.location.replaceState('/tenancy');
   }
 }

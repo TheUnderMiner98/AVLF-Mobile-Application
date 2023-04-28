@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from '../../../../../src/app/service/data.service';
 import { Router } from '@angular/router';
+import { ExitComponent } from '../exit/exit.component';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-tenancy',
@@ -28,11 +30,23 @@ export class TenancyComponent {
     private fb: FormBuilder,
     private dataService: DataService,
     private router: Router,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private location: Location,
   ) {}
 
   get controls(): { [p: string]: AbstractControl } {
     return this.generalInfoForm.controls;
+  }
+
+  open_exit_dialog(): void {
+    const dialogRef = this.dialog.open(ExitComponent, {
+      height: '25%',
+      width: '70%'
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      console.log('The dialog was closed');
+    });
   }
 
   next_step() {
@@ -58,7 +72,7 @@ export class TenancyComponent {
   save_details_2() {
     this.dataService.store_general_info_2(this.adult_count, this.children_count);
 
-    this.dataService.send_message('defenses');
+    this.router.navigate(['defenses']);
   }
 
   subtract_adult() {
@@ -77,5 +91,10 @@ export class TenancyComponent {
 
   add_child() {
     this.children_count++;
+  }
+
+  prev_component() {
+    this.router.navigate(['file-answer']);
+    // this.location.replaceState('/file-answer');
   }
 }

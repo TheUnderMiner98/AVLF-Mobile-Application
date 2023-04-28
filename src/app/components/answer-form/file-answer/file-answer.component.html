@@ -1,20 +1,21 @@
 <div class="container">
-    <p class="text-justify">File and Answer</p>
+    <br>
+    <br>
+    <p class="text-justify big pad"><b>File and Answer</b></p>
+    <div class="div-tr"></div>
     <td width="90%">
-        <mat-form-field appearance="outline" style="width: 100%; margin-top: 1vh;">
-            <mat-select [(value)]="selected">
-                <mat-option value="getting-started">1 - Getting Started</mat-option>
-                <mat-option value="tenancy">2 - About your tenancy</mat-option>
-                <mat-option value="defenses">3 - Defenses and Counterclaims</mat-option>
-                <mat-option value="final-check">4 - Final Check</mat-option>
-                <mat-option value="next-step">5 - Next Steps</mat-option>
-            </mat-select>
-        </mat-form-field>
+        <select class="form-select" [(ngModel)]="selected">
+            <option value="getting-started">1 - Getting Started</option>
+            <option value="tenancy">2 - About your tenancy</option>
+            <option value="defenses">3 - Defenses and Counterclaims</option>
+            <option value="final-check">4 - Final Check</option>
+        </select>
     </td>
     <td width="5%"></td>
     <td>
-        <button mat-button color="primary" (click)="open_exit_dialog()">Exit</button>
+        <button mat-button color="primary" (click)="open_exit_dialog()"><b>Exit</b></button>
     </td>
+    <div class="div-tr"></div>
     <mat-divider></mat-divider>
     <div class="content" *ngIf="selected === 'getting-started'">
         <app-getting-started></app-getting-started>
@@ -27,8 +28,5 @@
     </div>
     <div class="content" *ngIf="selected === 'final-check'">
         <app-final-check></app-final-check>
-    </div>
-    <div class="content" *ngIf="selected === 'next-step'">
-        <app-next-step></app-next-step>
     </div>
 </div>

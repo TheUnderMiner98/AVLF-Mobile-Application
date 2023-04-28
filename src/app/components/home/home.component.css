@@ -5,7 +5,8 @@
 }
 
 .subtext {
-    font-size: 1.5vh;
+    margin-top: 2vh;
+    font-size: 4vw;
     padding-bottom: 5vh;
 }
 
@@ -25,20 +26,31 @@
     margin-top: 5vh;
 }
 
+.card-body {
+    text-align: center;
+}
+
 .justify {
     text-align: justify;
     margin-bottom: 0;
-    font-size: 1.5vh;
+    font-size: 3.5vw;
 }
 
 a:link {
-    color: #d2ad30;
+    color: #ffca28;
 }
 
 a:visited {
-    color: #d2ad30;
+    color: #ffca28;
 }
 
 a:active {
-    color: #d2ad30;
+    color: #ffca28;
+}
+
+.option-btn {
+    border-radius: 1vh;
+    width: 76%;
+    height: 5vh;
+    color: #ffca28;
 }

@@ -1,3 +1,19 @@
+<div class="container">
+    <br>
+    <br>
+    <p class="text-justify big pad"><b>File and Answer</b></p>
+    <div class="div-tr"></div>
+    <td width="90%">
+        <p class="text-justify"><span class="head-text">3 - Defenses and Counterclaims</span><mat-icon>keyboard_arrow_down</mat-icon></p>
+    </td>
+    <td width="5%"></td>
+    <td>
+        <button mat-button color="primary" (click)="open_exit_dialog()"><b>Exit</b></button>
+    </td>
+    <br>
+    <mat-divider></mat-divider>
+</div>
+
 <div class="container" *ngIf="counter == 0">
     <p class="text-justify big"><b>Select all defenses that apply</b></p>
     <p class="text-justify big">Check the plaintiff's name and property address as shown below</p>
@@ -15,12 +31,8 @@
             <img src="../../../../assets/icon-1.png" alt="Photo of a Shiba Inu">
             <div class="inner-div">
                 <label>Plaintiff is not my landlord</label>
-                <mat-checkbox 
-                    class="checkbox-margin" 
-                    labelPosition="after" 
-                    [(ngModel)]="plaintiff_checkbox_1"
-                    color="primary"
-                >
+                <mat-checkbox class="checkbox-margin" labelPosition="after" [(ngModel)]="plaintiff_checkbox_1"
+                    color="primary">
                 </mat-checkbox>
                 <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button>
             </div>
@@ -32,12 +44,8 @@
             <img src="../../../../assets/icon-1.png" alt="Photo of a Shiba Inu">
             <div class="inner-div">
                 <label>Plaintiff is not my landlord</label>
-                <mat-checkbox 
-                    class="checkbox-margin" 
-                    labelPosition="after" 
-                    [(ngModel)]="plaintiff_checkbox_2"
-                    color="primary"
-                >
+                <mat-checkbox class="checkbox-margin" labelPosition="after" [(ngModel)]="plaintiff_checkbox_2"
+                    color="primary">
                 </mat-checkbox>
                 <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button>
             </div>
@@ -46,7 +54,8 @@
     <br>
     <div class="button-div">
         <button mat-raised-button style="float: left; width: 40%;" (click)="prev_step()"><b>Back</b></button>
-        <button mat-raised-button style="float: right; width: 56%" (click)="save_checkbox()" color="primary"><b>Next</b></button>
+        <button mat-raised-button style="float: right; width: 56%" (click)="save_checkbox()"
+            color="primary"><b>Next</b></button>
     </div>
 </div>
 
@@ -60,14 +69,763 @@
     </mat-card>
     <br>
     <div class="button-div response-btn">
-        <button mat-button class="height-btn" style="float: left; width: 47%;">
+        <button mat-button class="height-btn" style="float: left; width: 47%;" (click)="skip_two_steps()">
             <mat-icon [ngStyle]="{'color':'red'}">remove_circle_outline</mat-icon>No
         </button>
-        <button mat-button class="height-btn" style="float: right; width: 47%;">
+        <button mat-button class="height-btn" style="float: right; width: 47%;" (click)="next_step()">
             <mat-icon [ngStyle]="{'color':'lightgreen'}">check_circle_outline</mat-icon>Yes
         </button>
     </div>
     <div class="full-button">
         <button class="back-btn" mat-button style="float: left; width: 100%;" (click)="prev_step()"><b>Back</b></button>
+    </div>
+</div>
+
+<div class="container" *ngIf="counter == 2">
+    <p class="text-justify big"><b>Select all defenses that apply</b></p>
+    <div class="checkbox-div">
+        <section>
+            <p class="text-justify gray pad"><b>You paid successfully</b></p>
+
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 90%">
+                        <img src="../../../../assets/icon-2.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">I do not owe any rent to my landlord.</p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after"
+                            [(ngModel)]="did_not_pay_rent_checkboxes[0]" color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <!-- <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button> -->
+            </div>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <p class="text-justify gray pad"><b>You payment is not accepted</b></p>
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 90%">
+                        <img src="../../../../assets/icon-3.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">I offered my rent <b>on time</b> but the landlord refused to accept
+                                it.</p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after"
+                            [(ngModel)]="did_not_pay_rent_checkboxes[1]" color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <div class="div-tr"></div>
+                <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button>
+            </div>
+        </section>
+        <div class="div-tr"></div>
+        <button mat-raised-button style="float: left; width: 100%;" (click)="go_to_video()"><mat-icon>movie</mat-icon>
+            How to collect evidence</button>
+        <br><br>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <!-- <p class="text-justify gray pad"><b>You payment is not accepted</b></p> -->
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 90%">
+                        <img src="../../../../assets/icon-4.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">
+                                My landlord would not accept my rent and the cost for this warrant.
+                                <br>
+                                (It's a <a
+                                    href="https://law.justia.com/codes/georgia/2010/title-44/chapter-7/article-3/44-7-52"
+                                    target="_blank">tender defense</a>)
+                            </p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after"
+                            [(ngModel)]="did_not_pay_rent_checkboxes[2]" color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <div class="div-tr"></div>
+                <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button>
+            </div>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <p class="text-justify gray pad"><b>Landlord owes me money</b></p>
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 90%">
+                        <img src="../../../../assets/icon-5.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">
+                                My landlord has failed to repair the property. The failure costs <b>more than the rent
+                                    claimed.</b>
+                                <br>
+                                (How to <a
+                                    href="https://law.justia.com/codes/georgia/2010/title-44/chapter-7/article-3/44-7-52"
+                                    target="_blank">calculate the cost</a>?)
+                            </p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after"
+                            [(ngModel)]="did_not_pay_rent_checkboxes[3]" color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <div class="div-tr"></div>
+                <!-- <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button> -->
+            </div>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <!-- <p class="text-justify gray pad"><b>Landlord owes me money</b></p> -->
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 90%">
+                        <img src="../../../../assets/icon-6.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">
+                                Other payment-related issues.
+                            </p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after"
+                            [(ngModel)]="did_not_pay_rent_checkboxes[4]" color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <div class="div-tr"></div>
+                <!-- <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button> -->
+            </div>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <br>
+    <br>
+    <div class="button-div">
+        <button mat-raised-button style="float: left; width: 40%;" (click)="prev_step()"><b>Back</b></button>
+        <button mat-raised-button style="float: right; width: 56%" (click)="save_checkbox2()"
+            color="primary"><b>Next</b></button>
+    </div>
+</div>
+
+
+<div class="container" *ngIf="counter == 3">
+    <p class="text-justify big"><b>Reason for eviction</b></p>
+    <p class="text-justify big">Did your landlord make the following claim?</p>
+    <br>
+    <mat-card class="example-card">
+        <img mat-card-image src="../../../../assets/defenses-2.png" alt="Photo of a Shiba Inu">
+        <p style="text-align: center;"><b>"You violated the terms of your lease"</b></p>
+    </mat-card>
+    <br>
+    <div class="button-div response-btn">
+        <button mat-button class="height-btn" style="float: left; width: 47%;" (click)="skip_two_steps()">
+            <mat-icon [ngStyle]="{'color':'red'}">remove_circle_outline</mat-icon>No
+        </button>
+        <button mat-button class="height-btn" style="float: right; width: 47%;" (click)="next_step()">
+            <mat-icon [ngStyle]="{'color':'lightgreen'}">check_circle_outline</mat-icon>Yes
+        </button>
+    </div>
+    <div class="full-button">
+        <button class="back-btn" mat-button style="float: left; width: 100%;"
+            (click)="skip_two_steps_back()"><b>Back</b></button>
+    </div>
+</div>
+
+<div class="container" *ngIf="counter == 4">
+    <p class="text-justify big"><b>Select all defenses that apply</b></p>
+    <div class="checkbox-div">
+        <section>
+            <!-- <p class="text-justify gray pad"><b>You paid successfully</b></p> -->
+
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 90%">
+                        <img src="../../../../assets/icon-7.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">I didn't do the misconduct that my landlord accused me of.</p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after"
+                            [(ngModel)]="violate_terms_checkboxes[0]" color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <!-- <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button> -->
+            </div>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <!-- <p class="text-justify gray pad"><b>You payment is not accepted</b></p> -->
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 90%">
+                        <img src="../../../../assets/icon-8.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">Misconduct that my landlord accused me of is not listed in my lease.
+                            </p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after"
+                            [(ngModel)]="violate_terms_checkboxes[1]" color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <div class="div-tr"></div>
+                <!-- <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button> -->
+            </div>
+        </section>
+        <!-- <div class="div-tr"></div>
+        <button mat-raised-button style="float: left; width: 100%;" (click)="go_to_video()"><mat-icon>movie</mat-icon> How to collect evidence</button>
+        <br><br> -->
+    </div>
+    <mat-divider></mat-divider>
+    <br>
+    <br>
+    <div class="button-div">
+        <button mat-raised-button style="float: left; width: 40%;" (click)="prev_step()"><b>Back</b></button>
+        <button mat-raised-button style="float: right; width: 56%" (click)="save_checkbox3()"
+            color="primary"><b>Next</b></button>
+    </div>
+</div>
+
+<!-- “You did not move out at the end of your lease” -->
+<div class="container" *ngIf="counter == 5">
+    <p class="text-justify big"><b>Reason for eviction</b></p>
+    <p class="text-justify big">Did your landlord make the following claim?</p>
+    <br>
+    <mat-card class="example-card">
+        <img mat-card-image src="../../../../assets/defenses-3.png" alt="Photo of a Shiba Inu">
+        <p style="text-align: center;"><b>"You did not move out at the end of your lease"</b></p>
+    </mat-card>
+    <br>
+    <div class="button-div response-btn">
+        <button mat-button class="height-btn" style="float: left; width: 47%;" (click)="skip_two_steps()">
+            <mat-icon [ngStyle]="{'color':'red'}">remove_circle_outline</mat-icon>No
+        </button>
+        <button mat-button class="height-btn" style="float: right; width: 47%;" (click)="next_step()">
+            <mat-icon [ngStyle]="{'color':'lightgreen'}">check_circle_outline</mat-icon>Yes
+        </button>
+    </div>
+    <div class="full-button">
+        <button class="back-btn" mat-button style="float: left; width: 100%;"
+            (click)="skip_two_steps_back()"><b>Back</b></button>
+    </div>
+</div>
+
+<div class="container" *ngIf="counter == 6">
+    <p class="text-justify big"><b>Select all defenses that apply</b></p>
+    <div class="checkbox-div">
+        <section>
+            <!-- <p class="text-justify gray pad"><b>You paid successfully</b></p> -->
+
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 90%">
+                        <img src="../../../../assets/icon-9.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">My lease has not ended.</p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after"
+                            [(ngModel)]="did_not_move_out_checkboxes[0]" color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <!-- <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button> -->
+            </div>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <!-- <p class="text-justify gray pad"><b>You payment is not accepted</b></p> -->
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 90%">
+                        <img src="../../../../assets/icon-10.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">My landlord did not properly terminate my lease.</p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after"
+                            [(ngModel)]="did_not_move_out_checkboxes[1]" color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <div class="div-tr"></div>
+                <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button>
+            </div>
+        </section>
+        <!-- <div class="div-tr"></div>
+        <button mat-raised-button style="float: left; width: 100%;" (click)="go_to_video()"><mat-icon>movie</mat-icon> How to collect evidence</button>
+        <br><br> -->
+    </div>
+    <mat-divider></mat-divider>
+    <br>
+    <br>
+    <div class="button-div">
+        <button mat-raised-button style="float: left; width: 40%;" (click)="prev_step()"><b>Back</b></button>
+        <button mat-raised-button style="float: right; width: 56%" (click)="save_checkbox4()"
+            color="primary"><b>Next</b></button>
+    </div>
+</div>
+
+<div class="container" *ngIf="counter == 7">
+    <p class="text-justify big"><b>Raise landlord's mistakes</b></p>
+    <p class="text-justify big">Has your landlord failed to make repairs?</p>
+    <br>
+    <div class="button-div response-btn">
+        <button mat-button class="height-btn" style="float: left; width: 47%;">
+            <mat-icon [ngStyle]="{'color':'red'}">remove_circle_outline</mat-icon>No
+        </button>
+        <button mat-button class="height-btn" style="float: right; width: 47%;" (click)="next_step()">
+            <mat-icon [ngStyle]="{'color':'lightgreen'}">check_circle_outline</mat-icon>Yes
+        </button>
+    </div>
+    <div class="full-button">
+        <button class="back-btn" mat-button style="float: left; width: 100%;"
+            (click)="skip_two_steps_back()"><b>Back</b></button>
+    </div>
+</div>
+
+<div class="container" *ngIf="counter == 8">
+    <p class="text-justify big"><b>Good news, you may have a counterclaim!</b></p>
+    <div class="checkbox-div">
+        <section>
+            <!-- <p class="text-justify gray pad"><b>You paid successfully</b></p> -->
+
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 50%">
+                        <img src="../../../../assets/icon-11.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">Due to my landlord's failure to repair the property, its <b>value
+                                    has reduced.</b></p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after"
+                            [(ngModel)]="counterclaim_checkboxes[0]" color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <div class="div-tr"></div>
+                <p class="text-justify"><b>Value reduced for each month</b></p>
+                <div class="div-tr"></div>
+                <div class="currency-wrap">
+                    <span class="currency-code"><b>$</b></span>
+                    <input type="text" class="form-control yellow" placeholder="Enter TBD if uncertain"
+                        [(ngModel)]="counterclaim_amounts[0]" [disabled]="!counterclaim_checkboxes[0]">
+                </div>
+                <div class="div-tr"></div>
+                <div *ngIf="counterclaim_checkboxes[0]">
+                    for <span><input type="number" [(ngModel)]="counterclaim_reduced_value" class="mid-input"></span>
+                    months
+                    <div class="div-tr"></div>
+                    <button mat-raised-button style="float: left; width: 100%;"
+                        (click)="go_to_video()"><mat-icon>movie</mat-icon> How to collect evidence</button>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <!-- <p class="text-justify gray pad"><b>You paid successfully</b></p> -->
+
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 50%">
+                        <img src="../../../../assets/icon-12.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">Since my landlord failed to make requested repairs, <b>I made these
+                                    repairs and I have my receipts.</b></p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after"
+                            [(ngModel)]="counterclaim_checkboxes[1]" color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <div class="div-tr"></div>
+                <p class="text-justify"><b>These repairs cost me</b></p>
+                <div class="div-tr"></div>
+                <div class="currency-wrap">
+                    <span class="currency-code"><b>$</b></span>
+                    <input type="text" class="form-control yellow" placeholder="Enter TBD if uncertain"
+                        [(ngModel)]="counterclaim_amounts[1]" [disabled]="!counterclaim_checkboxes[1]">
+                </div>
+                <div class="div-tr"></div>
+                <div *ngIf="counterclaim_checkboxes[1]">
+                    <!-- for <span><input type="number" class="mid-input"></span> months
+                    <div class="div-tr"></div> -->
+                    <button mat-raised-button style="float: left; width: 100%;"
+                        (click)="go_to_video()"><mat-icon>movie</mat-icon> How to collect evidence</button>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <!-- <p class="text-justify gray pad"><b>You paid successfully</b></p> -->
+
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 50%">
+                        <img src="../../../../assets/icon-13.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">My landlord's failure to repair resulted in <b>damages to my person
+                                    and/or properties.</b></p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after"
+                            [(ngModel)]="counterclaim_checkboxes[2]" color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <div class="div-tr"></div>
+                <p class="text-justify"><b>Total estimated damage value was</b></p>
+                <div class="div-tr"></div>
+                <div class="currency-wrap">
+                    <span class="currency-code"><b>$</b></span>
+                    <input type="text" class="form-control yellow" placeholder="Enter TBD if uncertain"
+                        [(ngModel)]="counterclaim_amounts[2]" [disabled]="!counterclaim_checkboxes[2]">
+                </div>
+                <div class="div-tr"></div>
+                <div *ngIf="counterclaim_checkboxes[2]">
+                    <!-- for <span><input type="number" class="mid-input"></span> months
+                    <div class="div-tr"></div> -->
+                    <button mat-raised-button style="float: left; width: 100%;"
+                        (click)="go_to_video()"><mat-icon>movie</mat-icon> How to collect evidence</button>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <br>
+    <br>
+    <div class="button-div">
+        <button mat-raised-button style="float: left; width: 40%;" (click)="prev_step()"><b>Back</b></button>
+        <button mat-raised-button style="float: right; width: 56%" (click)="save_checkbox5()"
+            color="primary"><b>Next</b></button>
+    </div>
+</div>
+
+<div class="container" *ngIf="counter == 9">
+    <p class="text-justify big"><b>Other landlord's mistakes</b></p>
+    <p class="text-justify big">Did your landlord do any of the following? Select all that apply</p>
+    <div class="checkbox-div">
+        <section>
+            <p class="text-justify gray pad"><b>Wrong Process</b></p>
+
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 90%">
+                        <img src="../../../../assets/icon-14.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">My landlord did not issue a <a
+                                    href="https://law.justia.com/codes/georgia/2020/title-44/chapter-7/article-3/section-44-7-50/"
+                                    target="_blank">demand for possession</a> prior to filling in court.</p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after" [(ngModel)]="other_mistakes[0]"
+                            color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <div class="div-tr"></div>
+                <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button>
+            </div>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <!-- <p class="text-justify gray pad"><b>Wrong Process</b></p> -->
+
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 90%">
+                        <img src="../../../../assets/icon-15.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">My landlord personally attempted to serve the eviction notice or I
+                                did not receive proper service.</p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after" [(ngModel)]="other_mistakes[1]"
+                            color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <div class="div-tr"></div>
+                <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button>
+            </div>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <p class="text-justify gray pad"><b>Misconduct</b></p>
+
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 90%">
+                        <img src="../../../../assets/icon-16.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">My landlord gave me time to pay up or leave, but they filed with the
+                                court before the given deadline</p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after" [(ngModel)]="other_mistakes[2]"
+                            color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <div class="div-tr"></div>
+                <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button>
+            </div>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <!-- <p class="text-justify gray pad"><b>Misconduct</b></p> -->
+
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 90%">
+                        <img src="../../../../assets/icon-17.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">My landlord <b>retaliated against me</b> by filing this eviction
+                                after I requested repairs or reported condition violations.</p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after" [(ngModel)]="other_mistakes[3]"
+                            color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <div class="div-tr"></div>
+                <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button>
+            </div>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <p class="text-justify gray pad"><b>Other</b></p>
+
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 90%">
+                        <img src="../../../../assets/icon-18.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">My landlord terminated my lease without a valid reason.</p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after" [(ngModel)]="other_mistakes[4]"
+                            color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <div class="div-tr"></div>
+                <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button>
+            </div>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <!-- <p class="text-justify gray pad"><b>Other</b></p> -->
+
+            <div class="inner-div">
+                <tr>
+                    <td style="width: 90%">
+                        <img src="../../../../assets/icon-19.png" alt="Photo of a Shiba Inu">
+                        <br>
+                        <label>
+                            <p class="text-justify">Other defenses.</p>
+                        </label>
+                    </td>
+                    <td style="width: 9%">
+                        <mat-checkbox class="checkbox-margin-2" labelPosition="after" [(ngModel)]="other_mistakes[5]"
+                            color="primary">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+                <!-- <div class="div-tr"></div>
+                <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button> -->
+            </div>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <br>
+    <br>
+    <div class="button-div">
+        <button mat-raised-button style="float: left; width: 40%;" (click)="prev_step()"><b>Back</b></button>
+        <button mat-raised-button style="float: right; width: 56%" (click)="save_checkbox6()"
+            color="primary"><b>Next</b></button>
+    </div>
+</div>
+
+<div class="container" *ngIf="counter == 10">
+    <p class="text-justify big"><b>Review</b></p>
+    <div *ngIf="checkboxes.length == 0">
+        <br>
+        <p class="text-justify">
+            You have no defenses or counterclaims. Unfortunately, you will <b>automatically lose</b> the case with such an answer.
+        </p>
+        <div class="div-tr"></div>
+        <p class="text-justify">
+            The option below applies to many cases. Please select it if you think it might apply to yours too.
+        </p>
+        <div class="checkbox-div">
+            <section>
+                <p class="text-justify gray pad"><b>Other</b></p>
+    
+                <div class="inner-div">
+                    <tr>
+                        <td style="width: 90%">
+                            <img src="../../../../assets/icon-18.png" alt="Photo of a Shiba Inu">
+                            <br>
+                            <label>
+                                <p class="text-justify">My landlord terminated my lease without a valid reason.</p>
+                            </label>
+                        </td>
+                        <td style="width: 9%">
+                            <mat-checkbox class="checkbox-margin-2" labelPosition="after" [(ngModel)]="extra_option"
+                                color="primary">
+                            </mat-checkbox>
+                        </td>
+                    </tr>
+                    <div class="div-tr"></div>
+                    <button mat-button color="primary">Examples<mat-icon>play_circle_outline</mat-icon></button>
+                </div>
+            </section>
+        </div>
+        <mat-divider></mat-divider>
+        <br>
+        <p class="text-justify">
+            Otherwise, you may start from the beginning and view the options again.
+        </p>
+        <button mat-button color="primary" style="float: left;" (click)="reset_counter()"><b class="button-text">Go to Defenses and Counterclaims<mat-icon>arrow_forward</mat-icon></b></button>
+        <br>
+        <br>
+        <br>
+        <div class="button-div">
+            <button mat-raised-button style="float: left; width: 40%;" (click)="prev_step()"><b>Back</b></button>
+            <button mat-raised-button style="float: right; width: 56%" (click)="print_form2()"
+                color="primary"><b>Next</b></button>
+        </div>
+    </div>
+    <div *ngIf="checkboxes.length > 0">
+        <p class="text-justify big">You've selected {{ checkboxes.length }} defenses and/or counterclaims.</p>
+        <br>
+        <div class="for-loop" *ngFor="let i of checkboxes">
+            <div class="checkbox-div">
+                <section>
+                    <!-- <p class="text-justify gray pad" *ngIf=""><b>Other</b></p> -->
+
+                    <div class="inner-div">
+                        <tr>
+                            <td style="width: 90%">
+                                <img [src]="icons[i]" alt="Photo of a Shiba Inu">
+                                <br>
+                                <label>
+                                    <p class="text-justify" [innerHTML]="text[i]"></p>
+                                </label>
+                            </td>
+                            <td style="width: 9%">
+                                <button mat-button (click)="remove_item(i)"><mat-icon>close</mat-icon></button>
+                            </td>
+                        </tr>
+                        <p class="text-justify" *ngIf="extra_text[i].length > 0"><b>{{ extra_text[i] }}</b></p>
+                        <div *ngIf="extra_text[i].length > 0">
+                            <div class="div-tr"></div>
+                            <div class="currency-wrap">
+                                <span class="currency-code"><b>$</b></span>
+                                <input type="text" class="form-control yellow" placeholder="Enter TBD if uncertain"
+                                    [(ngModel)]="counterclaim_amounts[i - 9]">
+                            </div>
+                            <div class="div-tr"></div>
+
+                            <div *ngIf="i == 9">
+                                for <span><input type="number" [(ngModel)]="counterclaim_reduced_value"
+                                        class="mid-input"></span> months
+                                <div class="div-tr"></div>
+
+                            </div>
+                        </div>
+                        <div class="div-tr"></div>
+                    </div>
+                </section>
+            </div>
+            <mat-divider></mat-divider>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="button-div">
+            <button mat-raised-button style="float: left; width: 40%;" (click)="prev_step()"><b>Back</b></button>
+            <button mat-raised-button style="float: right; width: 56%" (click)="print_form()"
+                color="primary"><b>Next</b></button>
+        </div>
     </div>
 </div>

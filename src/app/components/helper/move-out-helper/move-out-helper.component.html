@@ -1,70 +1,137 @@
 <div class="container">
-    <button mat-button (click)="go_to_helper()"><mat-icon>arrow_back_ios</mat-icon> Back</button>
+    <button mat-button (click)="go_to_helper()" class="back-btn"><mat-icon>arrow_back_ios</mat-icon><b>Back</b></button>
     <div class="image-container">
         <img class="image" src="../../../assets/intro_1.png" alt="">
     </div>
     <div class="heading">
         <h3><b>My landlord is telling me to move out...</b></h3>
     </div>
-    <p class="text-justify">It doesn't mean that you need to move out right away. </p>
+    <p class="text-justify">You do not need to move out now.</p>
     <br>
     <p class="text-justify gray"><b>Before landlord file in court</b></p>
     <hr>
-    <mat-accordion>
-        <mat-expansion-panel (opened)="open[0] = true" (closed)="open[0] = false">
-            <mat-expansion-panel-header [collapsedHeight]="'8vh'" [expandedHeight]="'11vh'">
-                <mat-panel-title class="panel-title">
-                    <td><mat-icon>help</mat-icon></td>
-                    <td><p class="text-justify panel-text">What does it mean when my landlord tells me to move out?</p></td>
-                </mat-panel-title>
-            </mat-expansion-panel-header>
-            <p class="text-justify">Some content here!</p>
-        </mat-expansion-panel>
-        <mat-expansion-panel (opened)="open[1] = true" (closed)="open[1] = false">
-            <mat-expansion-panel-header [collapsedHeight]="'8vh'" [expandedHeight]="'11vh'">
-                <mat-panel-title class="panel-title">
-                    <td><mat-icon>help</mat-icon></td>
-                    <td><p class="text-justify panel-text">How to prevent court proceedings</p></td>
-                </mat-panel-title>
-            </mat-expansion-panel-header>
-            <p class="text-justify">Some content here!</p>
-        </mat-expansion-panel>
-    </mat-accordion>
+    <div class="checkbox-div">
+        <section>
+            <tr>
+                <td>
+                    <img src="../../../../assets/move-out-1.png" class="td-img" alt="Photo of a Shiba Inu">
+                </td>
+                <td style="width: 85%; padding-right: 3vh;">
+                    <p class="text-justify"><b>What does it mean when my landlord tells me to move out?</b></p>
+
+                    <div class="div-tr"></div>
+
+                    <p class="text-justify">
+                        By telling you to move out by a certain date, your landlord has demanded possession of the
+                        property.
+                    </p>
+
+                    <div class="div-tr"></div>
+
+                    <p class="text-justify">
+                        This demand means that the landlord has intentions of evicting you, but it could also be used as
+                        a warning tool to get you to comply with the terms in the lease agreement.
+                    </p>
+                </td>
+            </tr>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <tr>
+                <td>
+                    <img src="../../../../assets/move-out-2.png" class="td-img" alt="Photo of a Shiba Inu">
+                </td>
+                <td style="width: 85%; padding-right: 3vh;">
+                    <p class="text-justify"><b>What will happen next?</b></p>
+
+                    <div class="div-tr"></div>
+
+                    <p class="text-justify">
+                        This notice is not approved by or issued by the court, so you are not required to leave your
+                        home right now.
+                    </p>
+
+                    <div class="div-tr"></div>
+
+                    <p class="text-justify">
+                        Your landlord may escalate the situation by filing an eviction in court, which means you will
+                        have an eviction record.
+                    </p>
+                </td>
+            </tr>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <tr>
+                <td>
+                    <img src="../../../../assets/move-out-3.png" class="td-img" alt="Photo of a Shiba Inu">
+                </td>
+                <td style="width: 85%; padding-right: 3vh;">
+                    <p class="text-justify"><b>How to prevent court proceedings</b></p>
+
+                    <div class="div-tr"></div>
+
+                    <p class="text-justify">
+                        You may be able to prevent court proceedings and an eviction record by negotiating with your
+                        landlord, settling your debt, and moving right away if you can.
+                    </p>
+                </td>
+            </tr>
+        </section>
+    </div>
     <br>
     <p class="text-justify gray"><b>After landlord file in court</b></p>
-    <hr>
-    <mat-accordion>
-        <mat-expansion-panel (opened)="open[2] = true" (closed)="open[2] = false">
-            <mat-expansion-panel-header [collapsedHeight]="'8vh'" [expandedHeight]="'11vh'">
-                <mat-panel-title class="panel-title">
-                    <td><mat-icon>help</mat-icon></td>
-                    <td><p class="text-justify panel-text">What does it mean when my landlord tells me to move out?</p></td>
-                </mat-panel-title>
-            </mat-expansion-panel-header>
-            <p class="text-justify">Some content here!</p>
-        </mat-expansion-panel>
-        <mat-expansion-panel (opened)="open[3] = true" (closed)="open[3] = false">
-            <mat-expansion-panel-header [collapsedHeight]="'8vh'" [expandedHeight]="'11vh'">
-                <mat-panel-title class="panel-title">
-                    <td><mat-icon>help</mat-icon></td>
-                    <td><p class="text-justify panel-text">How to prevent court proceedings</p></td>
-                </mat-panel-title>
-            </mat-expansion-panel-header>
-            <p class="text-justify">Some content here!</p>
-        </mat-expansion-panel>
-        <mat-expansion-panel (opened)="open[4] = true" (closed)="open[4] = false">
-            <mat-expansion-panel-header [collapsedHeight]="'8vh'" [expandedHeight]="'11vh'">
-                <mat-panel-title class="panel-title">
-                    <td><mat-icon>help</mat-icon></td>
-                    <td><p class="text-justify panel-text">How to prevent court proceedings</p></td>
-                </mat-panel-title>
-            </mat-expansion-panel-header>
-            <p class="text-justify">Some content here!</p>
-        </mat-expansion-panel>
-    </mat-accordion>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <tr>
+                <td>
+                    <img src="../../../../assets/move-out-4.png" class="td-img" alt="Photo of a Shiba Inu">
+                </td>
+                <td style="width: 85%; padding-right: 3vh;">
+                    <p class="text-justify"><b>My landlord filed an eviction in court</b></p>
+
+                    <div class="div-tr"></div>
+
+                    <p class="text-justify">
+                        You will receive an eviction notice from a Sheriff, Marshal, or private process server. The
+                        notice will be tacked to your door or served to you in person.
+                    </p>
+                </td>
+            </tr>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="checkbox-div">
+        <section>
+            <tr>
+                <td>
+                    <img src="../../../../assets/move-out-5.png" class="td-img" alt="Photo of a Shiba Inu">
+                </td>
+                <td style="width: 85%; padding-right: 3vh;">
+                    <p class="text-justify"><b>What should I do?</b></p>
+
+                    <div class="div-tr"></div>
+
+                    <p class="text-justify">
+                        You will be able to defend your case by <a href="file-answer" (click)="go_to_form()">filing an Answer</a> within 7 days of service in court in
+                        response to the eviction notice.
+                    </p>
+                </td>
+            </tr>
+        </section>
+    </div>
+    <mat-divider></mat-divider>
+    <br>
     <br>
     <div class="button-div">
-        <button mat-button color="primary" (click)="go_to_form()"><b class="button-text">File Answer Form<mat-icon>arrow_forward</mat-icon></b></button>
+        <button mat-button color="primary" (click)="go_to_form()"><b class="button-text">File Answer
+                Form<mat-icon>arrow_forward</mat-icon></b></button>
         <button mat-button style="float: right;" (click)="go_to_home()"><mat-icon>home</mat-icon>Home</button>
     </div>
+    <br>
 </div>

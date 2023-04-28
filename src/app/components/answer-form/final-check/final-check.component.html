@@ -1,1 +1,58 @@
-<p>final-check works!</p>
+<div class="container">
+    <br>
+    <br>
+    <p class="text-justify big pad"><b>File and Answer</b></p>
+    <div class="div-tr"></div>
+    <td width="90%">
+        <p class="text-justify"><span class="head-text">4 - Final Check</span><mat-icon>keyboard_arrow_down</mat-icon></p>
+    </td>
+    <td width="5%"></td>
+    <td>
+        <button mat-button color="primary" (click)="open_exit_dialog()"><b>Exit</b></button>
+    </td>
+    <br>
+    <mat-divider></mat-divider>
+</div>
+
+<div class="container" *ngIf="counter == 0">
+    <pdf-viewer [src]="pdf_bytes" [render-text]="false" [render-text-mode]="0" [original-size]="false"
+        style="width: 80vw; height: 60vh" class="pdf"></pdf-viewer>
+
+    <div class="button-div">
+        <button mat-raised-button style="float: left; width: 40%; height: 8vh;" (click)="previous_component()"><b>Back</b></button>
+        <button mat-raised-button style="float: right; width: 56%; height: 8vh;" (click)="next_step()"
+            color="primary"><b>I confirm this info is correct</b></button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="div-tr"></div>
+</div>
+
+<div class="container" *ngIf="counter == 1">
+    <p class="text-justif"><b>File my form</b></p>
+    <div class="div-tr"></div>
+    <p class="text-justify">Please save and print your form to <span style="color: red;"><b>go to court to file before {{ date }}, 5:00 PM.</b></span></p>
+
+    <div class="full-button">
+        <button class="back-btn" style="float: left; width: 100%;" (click)="save_pdf()">
+            <tr>
+                <td class="left-td" align="left">
+                    <span class="btn-text"><mat-icon>cloud_download</mat-icon>&nbsp;Download to Device</span>
+                </td>
+                &nbsp;
+                <td class="right-td" align="right">
+                    <mat-icon>arrow_forward_ios</mat-icon>
+                </td>
+            </tr> 
+        </button>
+    </div>
+
+    <div class="spacing"></div>
+
+    <div class="button-div">
+        <button mat-raised-button style="float: left; width: 40%;" (click)="prev_step()"><b>Back</b></button>
+        <button mat-raised-button style="float: right; width: 56%" (click)="next_component()"
+            color="primary"><b>Next</b></button>
+    </div>
+</div>

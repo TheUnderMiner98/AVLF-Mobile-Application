@@ -31,6 +31,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox'
+import { MatMenuModule } from '@angular/material/menu';
+
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -63,7 +68,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox'
     MatFormFieldModule,
     MatSelectModule,
     MatDialogModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatMenuModule,
+    PdfViewerModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

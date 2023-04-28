@@ -5,11 +5,19 @@
 }
 
 .heading {
-    color: #d5c23a;
+    color: #ffca28;
 }
 
 .option {
     margin-top: 3vh;
+}
+
+@media screen and (min-width: 1000px) {
+    .text-justify {
+        text-align: left;
+        margin-bottom: 0;
+        font-size: 1vw;
+    }
 }
 
 .text-justify {
@@ -73,15 +81,15 @@ hr {
 }
 
 a:link {
-    color: #d2ad30;
+    color: #ffca28;
 }
 
 a:visited {
-    color: #d2ad30;
+    color: #ffca28;
 }
 
 a:active {
-    color: #d2ad30;
+    color: #ffca28;
 }
 
 .full-button {
