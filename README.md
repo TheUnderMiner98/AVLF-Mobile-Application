@@ -16,3 +16,8 @@ $ ng serve -o
 
 ## 2. Layout
 Once the website is up and running, please go into developer consoler (`Ctrl + Shift + I`) and select the Toggle Device toolbar option as shown below for better visualization of the application.
+<p align="center"><img src="mobile.jpg"></img></p>
+<br>
+
+Once the proper device layout is set up, the application should look like:
+<p align="center"><img src="front-page.jpg"></img></p>
